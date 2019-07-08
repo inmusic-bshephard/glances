@@ -70,7 +70,7 @@ class Export(GlancesExport):
             db = InfluxDBClient(host=self.host,
                                 port=self.port,
                                 ssl=(self.protocol.lower() == 'https'),
-                                verify_ssl=False,
+                                verify_ssl=self.verify_ssl,
                                 username=self.user,
                                 password=self.password,
                                 database=self.db)
